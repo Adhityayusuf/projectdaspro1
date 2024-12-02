@@ -5,6 +5,7 @@ public class PengisianKRS8 {
     public static void main(String[] args) {
         int fitur;
         
+        do {
         System.out.println("====== SISTEM PENGISIAN KRS ======");
         System.out.println(" 1. Tambah Data KRS ");
         System.out.println(" 2. Tampilkan Daftar KRS Mahasiswa ");
@@ -13,20 +14,21 @@ public class PengisianKRS8 {
 
         System.out.print("Pilih fitur yang ingin anda gunakan : ");
         fitur = sc.nextInt();
-
+        
         switch (fitur) {
             case 1 :
-                
-                break;
+            System.out.println("Tambah");
+            break;
             case 2 :
-                
-                break;
+            System.out.println("Tampil");
+            break;
             case 3 :
-                
-                break;
+            System.out.println("Analisis");
+            break;
             case 4 :
-                System.out.println("-- Terima Kasih --");
-                break;
+            System.out.println("-- Terima Kasih --");
+            break;
         }
+        } while (fitur >= 0 && fitur < 4);
     }
 }
