@@ -29,6 +29,6 @@ public class PengisianKRS8 {
             System.out.println("-- Terima Kasih --");
             break;
         }
-        } while (fitur >= 0 && fitur < 4);
+        } while (fitur >= 1 && fitur < 4);
     }
 }
