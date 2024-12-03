@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class PengisianKRS8 {
     static Scanner input = new Scanner(System.in);
-    static String[][] dataMahasiswa = new String[100][5]; // 100 itu cuma asumsi aja wkwk
+    static String[][] dataMahasiswa = new String[123][5]; // 123 itu untuk mhsiswa yg input lebuh dri 1 
     static int jumlahMahasiswa = 0;
 
     public static void main(String[] args) {
@@ -27,6 +27,7 @@ public class PengisianKRS8 {
                 break;
                 case 2 :
                 System.out.println("Tampil");
+                tampilData();
                 break;
                 case 3 :
                 System.out.println("Analisis");
@@ -38,6 +39,7 @@ public class PengisianKRS8 {
                   System.out.println("Pilihan tidak valid.");
             }
         } while (fitur != 4);
+        
     }
 
     // ini fungsi buat nambah data mahasiswa
@@ -77,5 +79,26 @@ public class PengisianKRS8 {
         } while (lanjut.equalsIgnoreCase("y"));
         System.out.println("Total SKS yang diambil : "+jumlahsks);
         System.out.println("\n-----------------------------");
+    }
+    public static void tampilData(){
+        System.out.println("--- Tampilkan Daftar KRS Mahasiswa ---");
+        input.nextLine();
+        System.out.print("Masukkan NIM Mahasiswa : ");
+        String nim = input.nextLine();
+        System.out.println();
+        System.out.println("Daftar KRS : ");
+        int no;
+        for(int i = 0; i < 99; i++) {
+            if (nim.equalsIgnoreCase(dataMahasiswa[i][1])) {
+                no = i;
+            }
+        }
+        System.out.print("NIM");
+        System.out.print("\tNama");
+        System.out.print("\t\tKode MK");
+        System.out.print("\t\tNama Mata Kuliah");
+        System.out.println("\t\tSKS");
+        for (int i = 0; i < )
+
     }
 }
