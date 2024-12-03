@@ -98,7 +98,9 @@ public class PengisianKRS8 {
         System.out.print("\t\tKode MK");
         System.out.print("\t\tNama Mata Kuliah");
         System.out.println("\t\tSKS");
-        for (int i = 0; i < )
+        for (int i = 0; i < 5; i++ ){
+            System.err.println(dataMahasiswa[i][0] +"\t"+ dataMahasiswa[i][1] +"\t\t"+ dataMahasiswa[i][2] +"\t\t"+ dataMahasiswa[i][3] +"\t\t\t\t"+ dataMahasiswa[i][4]);
+        }
 
     }
 }
