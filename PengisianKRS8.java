@@ -6,7 +6,7 @@ public class PengisianKRS8 {
     static int jumlahMahasiswa = 0;
 
     public static void main(String[] args) {
-        // buat nyimpen data krs
+        // buat nyimpen data KRS
         
         int fitur;
 
