@@ -46,7 +46,7 @@ public class PengisianKRS8 {
     public static void tambahData(String[][] data, int jumlah) {
         String lanjut;
         int sks;
-        int jmlsks=0;
+        int jmlsks = 0;
        
         System.out.println("\nTambah Data Mahasiswa");
         System.out.print("Masukkan nama : ");
@@ -90,13 +90,8 @@ public class PengisianKRS8 {
         String nim = input.nextLine();
         System.out.println();
         System.out.println("Daftar KRS : ");
-        int no;
         int jmlsks = 0;
-        for(int i = 0; i < dataMahasiswa.length; i++) {
-            if (nim.equalsIgnoreCase(dataMahasiswa[i][1])) {
-                no = i;
-            }
-        }
+    
         System.out.print("NIM");
         System.out.print("\tNama");
         System.out.print("\t\tKode MK");
@@ -108,5 +103,6 @@ public class PengisianKRS8 {
             jmlsks += jumlahsks[i];
             }
         }
+        System.out.println("Total SKS : " + jmlsks);
     }
 }
