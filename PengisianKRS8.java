@@ -26,7 +26,6 @@ public class PengisianKRS8 {
                 jumlahMahasiswa++;
                 break;
                 case 2 :
-                System.out.println("Tampil");
                 tampilData();
                 break;
                 case 3 :
