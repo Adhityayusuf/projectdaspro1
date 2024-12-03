@@ -2,12 +2,11 @@ import java.util.Scanner;
 
 public class PengisianKRS8 {
     static Scanner input = new Scanner(System.in);
-    // buat nyimpen data
     static String[][] dataMahasiswa = new String[100][5]; // 100 itu cuma asumsi aja wkwk
     static int jumlahMahasiswa = 0;
 
     public static void main(String[] args) {
-        // buat nyimpen data krs
+        // buat nyimpen data KRS
         
         int fitur;
 
@@ -44,27 +43,29 @@ public class PengisianKRS8 {
     // ini fungsi buat nambah data mahasiswa
     public static void tambahData(String[][] data, int jumlah) {
         String lanjut;
+        int sks;
+        int jumlahsks = 0;
         System.out.println("\nTambah Data Mahasiswa");
         System.out.print("Masukkan nama : ");
         String nama = input.next();
         System.out.print("Masukkan NIM : ");
         String nim = input.next();
+
         do {
         System.out.print("Masukkan kode mata kuliah : ");
         String kodeMK = input.next();
         System.out.print("Masukkan nama mata kuliah : ");
         String namaMK = input.next();
         System.out.print("Masukkan jumlah SKS (1-3): ");
-        int sks = input.nextInt();
+        sks = input.nextInt();
         if (sks >= 1 || sks <= 3) {
             System.out.println("Data mata kuliah berhasil ditambahkan!");
         } else {
             return;
         }
         System.out.print("Tambah mata kuliah? (y/t) : ");
-        lanjut = input.nextLine();
+        lanjut = input.next();
         input.nextLine();
-        System.out.println("\n-----------------------------");
         
         // ini buat masukin data ke array
         data[jumlah][0] = nama;
@@ -72,6 +73,9 @@ public class PengisianKRS8 {
         data[jumlah][2] = kodeMK;
         data[jumlah][3] = namaMK;
         data[jumlah][4] = String.valueOf(sks); // ini buat ngubah data sks dari int ke string
+        jumlahsks += sks;
         } while (lanjut.equalsIgnoreCase("y"));
+        System.out.println("Total SKS yang diambil : "+jumlahsks);
+        System.out.println("\n-----------------------------");
     }
 }
