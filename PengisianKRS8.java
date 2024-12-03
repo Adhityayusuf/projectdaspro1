@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class PengisianKRS8 {
     static Scanner input = new Scanner(System.in);
+    // buat nyimpen data
     static String[][] dataMahasiswa = new String[100][5]; // 100 itu cuma asumsi aja wkwk
     static int jumlahMahasiswa = 0;
 
