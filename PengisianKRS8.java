@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class PengisianKRS8 {
-    
+    static Scanner input = new Scanner(System.in);
+    static String[][] dataMahasiswa = new String[100][5]; // 100 itu cuma asumsi aja wkwk
+    static int jumlahMahasiswa = 0;
 
     public static void main(String[] args) {
         // buat nyimpen data krs
-        String[][] dataMahasiswa = new String[100][5]; // 100 itu cuma asumsi aja wkwk
-        int jumlahMahasiswa = 0;
-    Scanner input = new Scanner(System.in);
         
         int fitur;
 
@@ -42,32 +41,37 @@ public class PengisianKRS8 {
     }
 
     // ini fungsi buat nambah data mahasiswa
-    static void tambahData(String[][] data, int jumlah) {
-        Scanner input = new Scanner(System.in);
+    public static void tambahData(String[][] data, int jumlah) {
+        String lanjut;
         System.out.println("\nTambah Data Mahasiswa");
-        System.out.print("Masukkan nama: ");
+        System.out.print("Masukkan nama : ");
         String nama = input.next();
-        System.out.print("Masukkan NIM: ");
+        System.out.print("Masukkan NIM : ");
         String nim = input.next();
-        System.out.print("Masukkan kode mata kuliah: ");
-        String kodeMK = input.next();
-        System.out.print("Masukkan nama mata kuliah: ");
-        String namaMK = input.next();
-        System.out.print("Masukkan jumlah SKS: ");
-        int sks = input.nextInt();
-        System.out.println("\n-----------------------------");
 
-        // ini buat ngoreksi waktu sks
-        if (sks < 1 || sks > 3) {
-            System.out.println("Jumlah SKS harus antara 1 dan 3.");
+        do {
+        System.out.print("Masukkan kode mata kuliah : ");
+        String kodeMK = input.next();
+        System.out.print("Masukkan nama mata kuliah : ");
+        String namaMK = input.next();
+        System.out.print("Masukkan jumlah SKS (1-3): ");
+        int sks = input.nextInt();
+        if (sks >= 1 || sks <= 3) {
+            System.out.println("Data mata kuliah berhasil ditambahkan!");
+        } else {
             return;
         }
-
+        System.out.print("Tambah mata kuliah? (y/t) : ");
+        lanjut = input.next();
+        input.nextLine();
+        System.out.println("\n-----------------------------");
+        
         // ini buat masukin data ke array
         data[jumlah][0] = nama;
         data[jumlah][1] = nim;
         data[jumlah][2] = kodeMK;
         data[jumlah][3] = namaMK;
         data[jumlah][4] = String.valueOf(sks); // ini buat ngubah data sks dari int ke string
+        } while (lanjut.equalsIgnoreCase("y"));
     }
 }
