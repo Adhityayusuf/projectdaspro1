@@ -92,7 +92,7 @@ public class PengisianKRS8 {
         System.out.println("\t\tSKS");
         for (int i = 0; i < dataMahasiswa.length; i++ ){
             if(nim.equalsIgnoreCase(dataMahasiswa[i][1])){
-            System.err.println(dataMahasiswa[i][0] +"\t"+ dataMahasiswa[i][1] +"\t\t"+ dataMahasiswa[i][2] +"\t\t"+ dataMahasiswa[i][3] +"\t\t\t\t"+ dataMahasiswa[i][4]);
+            System.err.println(dataMahasiswa[i][1] +"\t"+ dataMahasiswa[i][0] +"\t\t"+ dataMahasiswa[i][2] +"\t\t"+ dataMahasiswa[i][3] +"\t\t\t\t"+ dataMahasiswa[i][4]);
             jmlsks += jumlahsks[i];
             }
         }
