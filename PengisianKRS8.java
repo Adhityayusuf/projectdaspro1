@@ -85,14 +85,10 @@ public class PengisianKRS8 {
         System.out.println();
         System.out.println("Daftar KRS : ");
         int jmlsks = 0;
-        System.out.print("NIM");
-        System.out.print("\tNama");
-        System.out.print("\t\tKode MK");
-        System.out.print("\t\tNama Mata Kuliah");
-        System.out.println("\t\tSKS");
+        System.out.println("NIM\tNama\t\tKode MK\t\tNama Mata Kuliah\t\tSKS");
         for (int i = 0; i < dataMahasiswa.length; i++ ){
             if(nim.equalsIgnoreCase(dataMahasiswa[i][1])){
-            System.err.println(dataMahasiswa[i][1] +"\t"+ dataMahasiswa[i][0] +"\t\t"+ dataMahasiswa[i][2] +"\t\t"+ dataMahasiswa[i][3] +"\t\t\t\t"+ dataMahasiswa[i][4]);
+            System.out.println(dataMahasiswa[i][1] +"\t"+ dataMahasiswa[i][0] +"\t\t"+ dataMahasiswa[i][2] +"\t\t"+ dataMahasiswa[i][3] +"\t\t\t\t"+ dataMahasiswa[i][4]);
             jmlsks += jumlahsks[i];
             }
         }
