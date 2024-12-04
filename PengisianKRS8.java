@@ -72,7 +72,7 @@ public class PengisianKRS8 {
         lanjut = input.next();
         input.nextLine();
         
-        // ini buat masukin data ke array
+        // ini buat masukin data ke Array
         data[jumlah][0] = nama;
         data[jumlah][1] = nim;
         data[jumlah][2] = kodeMK;
