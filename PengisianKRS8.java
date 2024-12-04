@@ -36,7 +36,7 @@ public class PengisianKRS8 {
                 System.out.println("-- Terima Kasih --");
                 break;
                 default:
-                  System.out.println("Pilihan tidak valid.");
+                System.out.println("Pilihan tidak valid.");
             }
         } while (fitur != 4);
         
@@ -47,7 +47,7 @@ public class PengisianKRS8 {
         String lanjut;
         int sks;
         int jmlsks = 0;
-       
+    
         System.out.println("\nTambah Data Mahasiswa");
         System.out.print("Masukkan nama : ");
         String nama = input.next();
