@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class PengisianKRS8 {
     static Scanner input = new Scanner(System.in);
     static String[][] dataMahasiswa = new String[123][5]; // 123 itu untuk mhsiswa yg input lebih dri 1 
@@ -8,9 +7,7 @@ public class PengisianKRS8 {
     static int jumlahsks[] = new int [123];
     public static void main(String[] args) {
         // buat nyimpen data Krs
-        
         int fitur;
-
         do {
             System.out.println("\nMenu Utama:");
             System.out.println("1. Tambah Data Mahasiswa");
@@ -19,7 +16,6 @@ public class PengisianKRS8 {
             System.out.println("4. Keluar ");
             System.out.print("Pilih menu : ");
             fitur = input.nextInt();
-
             switch (fitur) {
                 case 1:
                 System.out.println("\n--- Tambah Data KRS ---");
@@ -41,19 +37,16 @@ public class PengisianKRS8 {
         } while (fitur != 4);
         
     }
-
     // ini fungsi buat nambah data mahasiswa
     public static void tambahData(String[][] data, int jumlah) {
         String lanjut;
         int sks;
         int jmlsks = 0;
-    
         System.out.println("\nTambah Data Mahasiswa");
         System.out.print("Masukkan nama : ");
         String nama = input.next();
         System.out.print("Masukkan NIM : ");
         String nim = input.next();
-
         do {
         System.out.print("Masukkan kode mata kuliah : ");
         String kodeMK = input.next();
@@ -71,7 +64,6 @@ public class PengisianKRS8 {
         System.out.print("Tambah mata kuliah? (y/t) : ");
         lanjut = input.next();
         input.nextLine();
-        
         // ini buat masukin data ke Array
         data[jumlah][0] = nama;
         data[jumlah][1] = nim;
@@ -93,7 +85,6 @@ public class PengisianKRS8 {
         System.out.println();
         System.out.println("Daftar KRS : ");
         int jmlsks = 0;
-    
         System.out.print("NIM");
         System.out.print("\tNama");
         System.out.print("\t\tKode MK");
