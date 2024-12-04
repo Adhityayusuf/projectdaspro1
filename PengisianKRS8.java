@@ -4,6 +4,7 @@ public class PengisianKRS8 {
     static Scanner input = new Scanner(System.in);
     static String[][] dataMahasiswa = new String[123][5]; // 123 itu untuk mhsiswa yg input lebuh dri 1 
     static int jumlahMahasiswa = 0;
+    static int jmlSksMhsKrng20 = 0;
     static int jumlahsks[] = new int [123];
     public static void main(String[] args) {
         // buat nyimpen data Krs
@@ -26,11 +27,10 @@ public class PengisianKRS8 {
                 jumlahMahasiswa++;
                 break;
                 case 2 :
-                System.out.println("Tampil");
                 tampilData();
                 break;
                 case 3 :
-                System.out.println("Analisis");
+                analisisSKS();
                 break;
                 case 4 :
                 System.out.println("-- Terima Kasih --");
@@ -46,7 +46,7 @@ public class PengisianKRS8 {
     public static void tambahData(String[][] data, int jumlah) {
         String lanjut;
         int sks;
-        int jmlsks=0;
+        int jmlsks = 0;
        
         System.out.println("\nTambah Data Mahasiswa");
         System.out.print("Masukkan nama : ");
@@ -59,13 +59,15 @@ public class PengisianKRS8 {
         String kodeMK = input.next();
         System.out.print("Masukkan nama mata kuliah : ");
         String namaMK = input.next();
-        System.out.print("Masukkan jumlah SKS (1-3): ");
-        sks = input.nextInt();
-        if (sks >= 1 || sks <= 3) {
-            System.out.println("Data mata kuliah berhasil ditambahkan!");
-        } else {
-            return;
-        }
+        do {
+            System.out.print("Masukkan jumlah SKS (1-3): ");
+            sks = input.nextInt();
+            if (sks < 1 || sks > 3) {
+                System.out.println("Jumlah SKS tidak valid! SKS harus antara 1 dan 3.");
+            } else {
+                System.out.println("Data mata kuliah berhasil ditambahkan!");
+            }
+        } while (sks < 1 || sks > 3);
         System.out.print("Tambah mata kuliah? (y/t) : ");
         lanjut = input.next();
         input.nextLine();
@@ -90,13 +92,8 @@ public class PengisianKRS8 {
         String nim = input.nextLine();
         System.out.println();
         System.out.println("Daftar KRS : ");
-        int no;
         int jmlsks = 0;
-        for(int i = 0; i < dataMahasiswa.length; i++) {
-            if (nim.equalsIgnoreCase(dataMahasiswa[i][1])) {
-                no = i;
-            }
-        }
+    
         System.out.print("NIM");
         System.out.print("\tNama");
         System.out.print("\t\tKode MK");
@@ -108,5 +105,16 @@ public class PengisianKRS8 {
             jmlsks += jumlahsks[i];
             }
         }
+        System.out.println("Total SKS : " + jmlsks);
+    }
+    public static void analisisSKS() {
+        System.out.println("--- Analisis Data KRS ---");
+        for (int i = 0; i < jumlahMahasiswa; i++) {
+            if (jumlahsks[i] < 20) {
+                jmlSksMhsKrng20++;
+            }
+        }
+        System.out.println("Mahasiswa yang Mengambil SKS Kurang dari 20 : " + jmlSksMhsKrng20);
+        System.out.println("--------------------------------------------------");
     }
 }
