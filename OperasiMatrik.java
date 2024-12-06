@@ -1,5 +1,8 @@
 import java.util.Scanner;
 public class OperasiMatrik {
+    static int barisA,kolomA,barisB,kolomB;
+    static int[][] matriksA;
+    static int[][] matriksB;
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         int fitur;
@@ -10,25 +13,65 @@ public class OperasiMatrik {
             System.out.println("2. Pengurangan");
             System.out.println("3. Perkalian");
             System.out.println("4. Invers");
-            System.out.println("5. Tranfus");
+            System.out.println("5. Transfose");
             System.out.println("6. keluar");
             System.out.print("Pilih menu : ");
             fitur = input.nextInt();
             switch (fitur) {
                 case 1:
-                System.out.println("\n--- Tambah Data KRS ---");
+                System.out.println("\n===== OPERASI PENJUMLAHAN =====");
+                inputMatrik();
                 break;
                 case 2 :
+                System.out.println("\n===== OPERASI PENGURANGAN =====");
+                inputMatrik();
                 break;
                 case 3 :
+                System.out.println("\n===== OPERASI PERKALIAN =====");
+                inputMatrik();
                 break;
                 case 4 :
-                System.out.println("-- Terima Kasih --");
+                System.out.println("\n===== OPERASI INVERS =====");
+                inputMatrik();
+                break;
+                case 5 :
+                System.out.println("\n===== OPERASI TRANSFOSE =====");
+                inputMatrik();
+                break;
+                case 6 :
+                System.out.println("===== TERIMA KASIH =====");
                 break;
                 default:
                 System.out.println("Pilihan tidak valid.");
             }
-        } while (fitur != 4);
+        } while (fitur != 6);
         
+    }
+    public static void inputMatrik () {
+        System.out.print("Masukkan jumlah baris matriks A: ");
+        int barisA = input.nextInt();
+        System.out.print("Masukkan jumlah kolom matriks A: ");
+        int kolomA = input.nextInt();
+        System.out.print("Masukkan jumlah baris matriks B: ");
+        int barisB = input.nextInt();
+        System.out.print("Masukkan jumlah kolom matriks B: ");
+        int kolomB = input.nextInt();
+        matriksA = new int[barisA][kolomA];
+        matriksB = new int[barisB][kolomB];
+        System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS =====");
+        System.out.println("Masukkan elemen matriks A:");
+        for (int i = 0; i < barisA; i++) {
+            for (int j = 0; j < kolomA; j++) {
+                System.out.print("A[" + (i+1) + "][" + (j+1) + "]: ");
+                matriksA[i][j] = input.nextInt();
+            }
+        }
+        System.out.println("Masukkan elemen matriks B:");
+        for (int i = 0; i < barisB; i++) {
+            for (int j = 0; j < kolomB; j++) {
+                System.out.print("B[" + (i+1) + "][" + (j+1) + "]: ");
+                matriksB[i][j] = input.nextInt();
+            }
+        }
     }
 }
