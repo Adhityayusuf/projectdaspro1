@@ -5,6 +5,7 @@ public class OperasiMatrik {
     static int[][] matriksB;
     static int[][] hasilPenjumlahan;
     static int[][] hasilPengurangan;
+    static int[][] hasilPerkalian;
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         do {
@@ -32,6 +33,7 @@ public class OperasiMatrik {
                 case 3 :
                     System.out.println("\n===== OPERASI PERKALIAN =====");
                     inputMatrik();
+                    Perkalian();
                     break;
                 case 4 :
                     System.out.println("\n===== OPERASI INVERS =====");
@@ -50,7 +52,7 @@ public class OperasiMatrik {
         } while (fitur != 6);
         
     }
-    public static void inputMatrik () {
+    public static void inputMatrik() {
         System.out.print("\nMasukkan jumlah baris matriks A: ");
         barisA = input.nextInt();
         System.out.print("Masukkan jumlah kolom matriks A: ");
@@ -77,7 +79,7 @@ public class OperasiMatrik {
             }
         }
     }
-    public static void tambahDanKurang () {
+    public static void tambahDanKurang() {
         if (barisA == barisB && kolomA == kolomB) {
             hasilPenjumlahan = new int[barisA][kolomA];
             hasilPengurangan = new int[barisA][kolomA];
@@ -119,6 +121,32 @@ public class OperasiMatrik {
         } else {
             System.out.println();
             System.out.println("===== INPUTAN BARIS DAN KOLOM TIDAK SESUAI !!! =====");
+            System.out.println();
+        }
+    }
+    public static void Perkalian() {
+        if (kolomA != barisB) {
+            System.out.println();
+            System.out.println("===== BARIS DAN KOLOM TIDAK MEMENUHI SYARAT =====");
+            System.out.println();
+            return;
+        }
+        hasilPerkalian = new int[barisA][kolomB];
+        for (int i = 0; i < barisA; i++) {
+            for (int j = 0; j < kolomB; j++) {
+                hasilPerkalian[i][j] = 0;
+                for (int k = 0; k < kolomA; k++) {
+                    hasilPerkalian[i][j] += matriksA[i][k] * matriksB[k][j];
+                }
+            }
+        }
+        System.out.println("Hasil perkalian matriks:");
+        for (int i = 0; i < barisA; i++) {
+            System.out.println("| ");
+            for (int j = 0; j < kolomB; j++) {
+                System.out.print(hasilPerkalian[i][j] + " ");
+            }
+            System.out.println("|");
             System.out.println();
         }
     }
