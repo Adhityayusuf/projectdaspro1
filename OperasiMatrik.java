@@ -1,11 +1,12 @@
 import java.util.Scanner;
 public class OperasiMatrik {
-    static int barisA,kolomA,barisB,kolomB;
+    static int barisA,kolomA,barisB,kolomB,fitur;
     static int[][] matriksA;
     static int[][] matriksB;
+    static int[][] hasilPenjumlahan;
+    static int[][] hasilPengurangan;
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        int fitur;
         do {
             System.out.println("====== OPERASI MATRIKS ======");
             System.out.println("\nSilahkan Pilih Menu Operasi :");
@@ -19,28 +20,30 @@ public class OperasiMatrik {
             fitur = input.nextInt();
             switch (fitur) {
                 case 1:
-                System.out.println("\n===== OPERASI PENJUMLAHAN =====");
-                inputMatrik();
-                break;
+                    System.out.println("\n===== OPERASI PENJUMLAHAN =====");
+                    inputMatrik();
+                    tambahDanKurang();
+                    break;
                 case 2 :
-                System.out.println("\n===== OPERASI PENGURANGAN =====");
-                inputMatrik();
-                break;
+                    System.out.println("\n===== OPERASI PENGURANGAN =====");
+                    inputMatrik();
+                    tambahDanKurang();
+                    break;
                 case 3 :
-                System.out.println("\n===== OPERASI PERKALIAN =====");
-                inputMatrik();
-                break;
+                    System.out.println("\n===== OPERASI PERKALIAN =====");
+                    inputMatrik();
+                    break;
                 case 4 :
-                System.out.println("\n===== OPERASI INVERS =====");
-                inputMatrik();
-                break;
+                    System.out.println("\n===== OPERASI INVERS =====");
+                    inputMatrik();
+                    break;
                 case 5 :
-                System.out.println("\n===== OPERASI TRANSFOSE =====");
-                inputMatrik();
-                break;
+                    System.out.println("\n===== OPERASI TRANSFOSE =====");
+                    inputMatrik();
+                    break;
                 case 6 :
-                System.out.println("===== TERIMA KASIH =====");
-                break;
+                    System.out.println("===== TERIMA KASIH =====");
+                    break;
                 default:
                 System.out.println("Pilihan tidak valid.");
             }
@@ -72,6 +75,27 @@ public class OperasiMatrik {
                 System.out.print("B[" + (i+1) + "][" + (j+1) + "]: ");
                 matriksB[i][j] = input.nextInt();
             }
+        }
+    }
+    public static void tambahDanKurang () {
+        if (barisA == barisB && kolomA == kolomB) {
+            hasilPenjumlahan = new int[barisA][kolomA];
+            hasilPengurangan = new int[barisA][kolomA];
+            if (fitur == 1) {
+                for (int i = 0; i < barisA; i++) {
+                    for (int j = 0; j < kolomA; j++) {
+                        hasilPenjumlahan[i][j] = matriksA[i][j] + matriksB[i][j];
+                    }
+                }
+            } else if (fitur == 2) {
+                for (int i = 0; i < barisA; i++) {
+                    for (int j = 0; j < kolomA; j++) {
+                        hasilPengurangan[i][j] = matriksA[i][j] - matriksB[i][j];
+                    }
+                }
+            }
+        } else {
+            System.out.println("INPUTAN BARIS DAN KOLOM TIDAK SESUAI !!!");
         }
     }
 }
