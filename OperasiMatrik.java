@@ -52,13 +52,13 @@ public class OperasiMatrik {
     }
     public static void inputMatrik () {
         System.out.print("Masukkan jumlah baris matriks A: ");
-        int barisA = input.nextInt();
+        barisA = input.nextInt();
         System.out.print("Masukkan jumlah kolom matriks A: ");
-        int kolomA = input.nextInt();
+        kolomA = input.nextInt();
         System.out.print("Masukkan jumlah baris matriks B: ");
-        int barisB = input.nextInt();
+        barisB = input.nextInt();
         System.out.print("Masukkan jumlah kolom matriks B: ");
-        int kolomB = input.nextInt();
+        kolomB = input.nextInt();
         matriksA = new int[barisA][kolomA];
         matriksB = new int[barisB][kolomB];
         System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS =====");
@@ -87,11 +87,25 @@ public class OperasiMatrik {
                         hasilPenjumlahan[i][j] = matriksA[i][j] + matriksB[i][j];
                     }
                 }
+                System.out.println("Hasil penjumlahan matriks:");
+                for (int i = 0; i < barisA; i++) {
+                    for (int j = 0; j < kolomA; j++) {
+                        System.out.print(hasilPenjumlahan[i][j] + " ");
+                    }
+                    System.out.println();
+                }
             } else if (fitur == 2) {
                 for (int i = 0; i < barisA; i++) {
                     for (int j = 0; j < kolomA; j++) {
                         hasilPengurangan[i][j] = matriksA[i][j] - matriksB[i][j];
                     }
+                }
+                System.out.println("Hasil pengurangan matriks:");
+                for (int i = 0; i < barisA; i++) {
+                    for (int j = 0; j < kolomA; j++) {
+                        System.out.print(hasilPengurangan[i][j] + " ");
+                    }
+                    System.out.println();
                 }
             }
         } else {
