@@ -68,7 +68,6 @@ public class OperasiMatrik {
                 System.out.println("Baris atau kolom tidak boleh nol !!");
             }
         } while (barisA == 0 || kolomA == 0);
-
         matriksA = new int[barisA][kolomA];
         System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS A =====");
         System.out.println("\nMasukkan elemen matriks A:");
@@ -78,7 +77,7 @@ public class OperasiMatrik {
                 matriksA[i][j] = input.nextInt();
             }
         }
-    }
+    } 
     public static void inputMatriksB() {
         do {
             System.out.print("\nMasukkan jumlah baris matriks B: ");
@@ -90,7 +89,6 @@ public class OperasiMatrik {
                 System.out.println("Baris atau kolom tidak boleh nol !!");
             }
         } while (barisB == 0 || kolomB == 0);
-
         matriksB = new int[barisB][kolomB];
         System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS B =====");
         System.out.println("\nMasukkan elemen matriks B:");
@@ -268,7 +266,7 @@ public class OperasiMatrik {
                 System.out.print("|"); 
             }System.out.println("\n");
         }  
-    }
+    }    
     public static void transposeMatriks() {
         System.out.println("\n--- Matriks sebelum ditranspose ---");
         for (int i = 0; i < barisA; i++) {
