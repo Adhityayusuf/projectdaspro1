@@ -15,7 +15,7 @@ public class OperasiMatrik {
             System.out.println("2. Pengurangan");
             System.out.println("3. Perkalian");
             System.out.println("4. Invers");
-            System.out.println("5. Transfose");
+            System.out.println("5. Transpose");
             System.out.println("6. keluar");
             System.out.print("Pilih menu : ");
             fitur = input.nextInt();
@@ -43,7 +43,7 @@ public class OperasiMatrik {
                     inputMatriksA();
                     break;
                 case 5 :
-                    System.out.println("\n===== OPERASI TRANSFOSE =====");
+                    System.out.println("\n===== OPERASI TRANSPOSE =====");
                     inputMatriksA();
                     transposeMatriks();
                     break;
