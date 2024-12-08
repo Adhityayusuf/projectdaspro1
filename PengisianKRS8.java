@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class PengisianKRS8 {
     static Scanner input = new Scanner(System.in);
-    static String[][] dataMahasiswa = new String[123][5]; // 123 itu untuk mhsiswa yg input lebih dri 1 
+    static String[][] dataMahasiswa = new String[123][5];
     static int jumlahMahasiswa = 0;
     static int jmlSksMhsKrng20 = 0;
     static int jumlahsks[] = new int [123];
