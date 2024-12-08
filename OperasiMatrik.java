@@ -260,7 +260,6 @@ public class OperasiMatrik {
             }
         } else if (pilih == 2) {
             System.out.println("Matriks invers:");
-            
             for (int i = 0; i < invers3x3.length; i++) {
                 System.out.print( "| ");
                 for (int j = 0; j < invers3x3[i].length; j++) {
@@ -292,7 +291,6 @@ public class OperasiMatrik {
         }
         matriksA = transpose;
         for (int i = 0; i < barisA; i++) {
-            
             System.out.print( "\n| ");
             for (int j = 0; j < kolomA; j++) {
                 System.out.print(matriksA[i][j] + " ");
