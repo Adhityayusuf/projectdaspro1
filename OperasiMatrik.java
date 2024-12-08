@@ -59,10 +59,17 @@ public class OperasiMatrik {
         
     }
     public static void inputMatriksA() {
-        System.out.print("\nMasukkan jumlah baris matriks A: ");
-        barisA = input.nextInt();
-        System.out.print("Masukkan jumlah kolom matriks A: ");
-        kolomA = input.nextInt();
+        do {
+            System.out.print("\nMasukkan jumlah baris matriks A: ");
+            barisA = input.nextInt();
+            System.out.print("Masukkan jumlah kolom matriks A: ");
+            kolomA = input.nextInt();
+
+            if (barisA == 0 || kolomA == 0) {
+                System.out.println("Baris atau kolom tidak boleh nol !!");
+            }
+        } while (barisA == 0 || kolomA == 0);
+
         matriksA = new int[barisA][kolomA];
         System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS A =====");
         System.out.println("\nMasukkan elemen matriks A:");
@@ -73,13 +80,22 @@ public class OperasiMatrik {
             }
         }
     }
+        
+    
 
     public static void inputMatriksB() {
-        System.out.print("\nMasukkan jumlah baris matriks B: ");
-        barisB = input.nextInt();
-        System.out.print("Masukkan jumlah kolom matriks B: ");
-        kolomB = input.nextInt();
-        matriksB = new int[barisB][kolomB];
+        do {
+            System.out.print("\nMasukkan jumlah baris matriks A: ");
+            barisB = input.nextInt();
+            System.out.print("Masukkan jumlah kolom matriks A: ");
+            kolomB = input.nextInt();
+
+            if (barisB == 0 || kolomB == 0) {
+                System.out.println("Baris atau kolom tidak boleh nol !!");
+            }
+        } while (barisB == 0 || kolomB == 0);
+
+        matriksA = new int[barisB][kolomB];
         System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS B =====");
         System.out.println("\nMasukkan elemen matriks B:");
         for (int i = 0; i < barisB; i++) {
@@ -89,6 +105,7 @@ public class OperasiMatrik {
             }
         }
     }
+    
 
     public static void tambahDanKurang() {
         if (barisA == barisB && kolomA == kolomB) {
