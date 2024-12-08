@@ -165,7 +165,7 @@ public class OperasiMatrik {
         System.out.println("\n--- Matriks sebelum ditranspose ---");
         for (int i = 0; i < barisA; i++) {
             
-            System.out.print( "\n"+ "| ");
+            System.out.print( "\n| ");
             for (int j = 0; j < kolomA; j++) {
                 System.out.print(matriksA[i][j] + " ");
             }
