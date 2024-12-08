@@ -11,7 +11,7 @@ public class OperasiMatrik {
     static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
         do {
-            System.out.println("====== OPERASI MATRIKS ======");
+            System.out.println("\n====== OPERASI MATRIKS ======");
             System.out.println("\nSilahkan Pilih Menu Operasi :");
             System.out.println("1. Penjumlahan");
             System.out.println("2. Pengurangan");
@@ -56,7 +56,6 @@ public class OperasiMatrik {
                 System.out.println("Pilihan tidak valid.");
             }
         } while (fitur != 6);
-        
     }
     public static void inputMatriksA() {
         do {
@@ -80,14 +79,11 @@ public class OperasiMatrik {
             }
         }
     }
-        
-    
-
     public static void inputMatriksB() {
         do {
-            System.out.print("\nMasukkan jumlah baris matriks A: ");
+            System.out.print("\nMasukkan jumlah baris matriks B: ");
             barisB = input.nextInt();
-            System.out.print("Masukkan jumlah kolom matriks A: ");
+            System.out.print("Masukkan jumlah kolom matriks B: ");
             kolomB = input.nextInt();
 
             if (barisB == 0 || kolomB == 0) {
@@ -95,7 +91,7 @@ public class OperasiMatrik {
             }
         } while (barisB == 0 || kolomB == 0);
 
-        matriksA = new int[barisB][kolomB];
+        matriksB = new int[barisB][kolomB];
         System.out.println("\n===== PENGINPUTAN ELEMEN MATRIKS B =====");
         System.out.println("\nMasukkan elemen matriks B:");
         for (int i = 0; i < barisB; i++) {
@@ -105,8 +101,6 @@ public class OperasiMatrik {
             }
         }
     }
-    
-
     public static void tambahDanKurang() {
         if (barisA == barisB && kolomA == kolomB) {
             hasilPenjumlahan = new int[barisA][kolomA];
@@ -119,15 +113,22 @@ public class OperasiMatrik {
                 }
                 System.out.println("\n===== Hasil penjumlahan matriks =====");
                 System.out.println();
-                for (int i = 0; i < barisA; i++) {
-                    System.out.print("| ");
-                    for (int j = 0; j < kolomA; j++) {
-                        System.out.print(matriksA[i][j]+hasilPenjumlahan[i][j] + " ");
+                for(int i = 0; i < barisA; i++){
+                    System.out.print("|");
+                    for(int j = 0; j < kolomA; j++) {
+                        System.out.print(" " + matriksA[i][j]);
+                    }
+                    System.out.print("|  +  |");
+                    for(int j = 0; j < kolomB; j++){
+                        System.out.print(" " + matriksB[i][j]);
+                    }
+                    System.out.print("|  =  |");
+                    for(int j = 0; j < kolomA; j++){
+                        System.out.print(" " + hasilPenjumlahan[i][j]);
                     }
                     System.out.print("|");
                     System.out.println();
                 }
-                System.out.println();
             } else if (fitur == 2) {
                 for (int i = 0; i < barisA; i++) {
                     for (int j = 0; j < kolomA; j++) {
@@ -136,15 +137,22 @@ public class OperasiMatrik {
                 }
                 System.out.println("\n===== Hasil pengurangan matriks =====");
                 System.out.println();
-                for (int i = 0; i < barisA; i++) {
-                    System.out.print("| ");
-                    for (int j = 0; j < kolomA; j++) {
-                        System.out.print(hasilPengurangan[i][j] + " ");
+                for(int i = 0; i < barisA; i++){
+                    System.out.print("|");
+                    for(int j = 0; j < kolomA; j++) {
+                        System.out.print(" " + matriksA[i][j]);
+                    }
+                    System.out.print("|  -  |");
+                    for(int j = 0; j < kolomB; j++){
+                        System.out.print(" " + matriksB[i][j]);
+                    }
+                    System.out.print("|  =  |");
+                    for(int j = 0; j < kolomA; j++){
+                        System.out.print(" " + hasilPengurangan[i][j]);
                     }
                     System.out.print("|");
                     System.out.println();
                 }
-                System.out.println();
             }
         } else {
             System.out.println();
@@ -196,9 +204,7 @@ public class OperasiMatrik {
                     matriks2x2[i][j] = input.nextInt();
                 }
             }
-            
             double det = matriks2x2[0][0] * matriks2x2[1][1] - matriks2x2[0][1] * matriks2x2[1][0];
-            
             if (det == 0) {
                 System.out.println("Determinan = " + det);
                 System.out.println("Matriks tidak memiliki invers.");
@@ -223,7 +229,6 @@ public class OperasiMatrik {
                 - matriks3x3[0][2] * matriks3x3[1][1] * matriks3x3[2][0]
                 - matriks3x3[0][1] * matriks3x3[1][0] * matriks3x3[2][2]
                 - matriks3x3[0][0] * matriks3x3[1][2] * matriks3x3[2][1];
-            
                 if (det == 0) {
                     System.out.println("Determinan = " + det);
                     System.out.println("Matriks tidak memiliki invers.");
@@ -239,11 +244,9 @@ public class OperasiMatrik {
                     invers3x3[2][2] = (matriks3x3[0][0]*matriks3x3[1][1]-matriks3x3[0][1]*matriks3x3[1][0])*1/det;
                     System.out.println("Determinan = " + det);
                 }
-            
         } else {
             System.out.println("Ordo matriks tidak valid.");
         }
-
         // Tampilkan invers
         if (pilih == 1) {
             System.out.println("Matriks invers:");
@@ -267,11 +270,10 @@ public class OperasiMatrik {
             }System.out.println("\n");
         }  
     }
-    
     public static void transposeMatriks() {
         System.out.println("\n--- Matriks sebelum ditranspose ---");
         for (int i = 0; i < barisA; i++) {
-            System.out.print( "\n"+ "| ");
+            System.out.print( "\n| ");
             for (int j = 0; j < kolomA; j++) {
                 System.out.print(matriksA[i][j] + " ");
             }
@@ -291,7 +293,7 @@ public class OperasiMatrik {
         matriksA = transpose;
         for (int i = 0; i < barisA; i++) {
             
-            System.out.print( "\n"+ "| ");
+            System.out.print( "\n| ");
             for (int j = 0; j < kolomA; j++) {
                 System.out.print(matriksA[i][j] + " ");
             }
