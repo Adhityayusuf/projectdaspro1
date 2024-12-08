@@ -3,6 +3,8 @@ public class OperasiMatrik {
     static int barisA,kolomA,barisB,kolomB,fitur;
     static int[][] matriksA;
     static int[][] matriksB;
+    static int[][] matriks2x2 = new int[2][2];
+    static int[][] matriks3x3 = new int[3][3];
     static int[][] hasilPenjumlahan;
     static int[][] hasilPengurangan;
     static int[][] hasilPerkalian;
@@ -40,7 +42,7 @@ public class OperasiMatrik {
                     break;
                 case 4 :
                     System.out.println("\n===== OPERASI INVERS =====");
-                    inputMatriksA();
+                    hitungInvers();
                     break;
                 case 5 :
                     System.out.println("\n===== OPERASI TRANSPOSE =====");
@@ -161,10 +163,97 @@ public class OperasiMatrik {
         }
         System.out.println();
     }
+    public static void hitungInvers(){
+        System.out.println("-- ordo matriks yang tersedia --");
+        System.out.println("1. ordo 2x2");
+        System.out.println("2. ordo 3x3");
+        System.out.print("Pilih : ");
+        int pilih = input.nextInt();
+        double[][] invers2x2 = new double[2][2];
+        double[][] invers3x3 = new double[3][3];
+        if (pilih == 1) {
+            System.out.println("\nMasukkan nilai matriks :");
+            for (int i = 0; i < matriks2x2.length; i++) {
+                for (int j = 0; j < matriks2x2[i].length; j++) {
+                    System.out.print("Elemen [" + (i + 1) + "][" + (j + 1) + "]: ");
+                    matriks2x2[i][j] = input.nextInt();
+                }
+            }
+            
+            double det = matriks2x2[0][0] * matriks2x2[1][1] - matriks2x2[0][1] * matriks2x2[1][0];
+            
+            if (det == 0) {
+                System.out.println("Determinan = " + det);
+                System.out.println("Matriks tidak memiliki invers.");
+            } else {
+                System.out.println("Determinan = " + det);
+                invers2x2[0][0] = matriks2x2[1][1] / det;
+                invers2x2[0][1] = -matriks2x2[0][1] / det;
+                invers2x2[1][0] = -matriks2x2[1][0] / det;
+                invers2x2[1][1] = matriks2x2[0][0] / det;
+            }
+        } else if (pilih == 2) {
+            System.out.println("\nMasukkan nilai matriks :");
+            for (int i = 0; i < matriks3x3.length; i++) {
+                for (int j = 0; j < matriks3x3[i].length; j++) {
+                    System.out.print("Elemen [" + (i + 1) + "][" + (j + 1) + "]: ");
+                    matriks3x3[i][j] = input.nextInt();
+                }
+            }
+            int det = matriks3x3[0][0] * matriks3x3[1][1] * matriks3x3[2][2]
+                + matriks3x3[0][1] * matriks3x3[1][2] * matriks3x3[2][0]
+                + matriks3x3[0][2] * matriks3x3[1][0] * matriks3x3[2][1]
+                - matriks3x3[0][2] * matriks3x3[1][1] * matriks3x3[2][0]
+                - matriks3x3[0][1] * matriks3x3[1][0] * matriks3x3[2][2]
+                - matriks3x3[0][0] * matriks3x3[1][2] * matriks3x3[2][1];
+            
+                if (det == 0) {
+                    System.out.println("Determinan = " + det);
+                    System.out.println("Matriks tidak memiliki invers.");
+                }else {
+                    invers3x3[0][0] = (matriks3x3[1][1]*matriks3x3[2][2]-matriks3x3[1][2]*matriks3x3[2][1])*1/det;
+                    invers3x3[0][1] = -(matriks3x3[1][0]*matriks3x3[2][2]-matriks3x3[1][2]*matriks3x3[2][0])*1/det;
+                    invers3x3[0][2] = (matriks3x3[1][0]*matriks3x3[2][1]-matriks3x3[1][1]*matriks3x3[2][0])*1/det;
+                    invers3x3[1][0] = -(matriks3x3[0][1]*matriks3x3[2][2]-matriks3x3[0][2]*matriks3x3[2][1])*1/det;
+                    invers3x3[1][1] = (matriks3x3[0][0]*matriks3x3[2][2]-matriks3x3[0][2]*matriks3x3[2][0])*1/det;
+                    invers3x3[1][2] = -(matriks3x3[0][0]*matriks3x3[2][1]-matriks3x3[0][1]*matriks3x3[2][0])*1/det;
+                    invers3x3[2][0] = (matriks3x3[0][1]*matriks3x3[1][2]-matriks3x3[0][2]*matriks3x3[1][1])*1/det;
+                    invers3x3[2][1] = -(matriks3x3[0][0]*matriks3x3[1][2]-matriks3x3[0][2]*matriks3x3[1][0])*1/det;
+                    invers3x3[2][2] = (matriks3x3[0][0]*matriks3x3[1][1]-matriks3x3[0][1]*matriks3x3[1][0])*1/det;
+                    System.out.println("Determinan = " + det);
+                }
+            
+        } else {
+            System.out.println("Ordo matriks tidak valid.");
+        }
+
+        // Tampilkan invers
+        if (pilih == 1) {
+            System.out.println("Matriks invers:");
+            for (int i = 0; i < invers2x2.length; i++) {
+                System.out.print( "| ");
+                for (int j = 0; j < invers2x2[i].length; j++) {
+                    System.out.print(invers2x2[i][j] + "  ");
+                }
+                System.out.print("|");
+                System.out.println("\n");
+            }
+        } else if (pilih == 2) {
+            System.out.println("Matriks invers:");
+            
+            for (int i = 0; i < invers3x3.length; i++) {
+                System.out.print( "| ");
+                for (int j = 0; j < invers3x3[i].length; j++) {
+                    System.out.print(invers3x3[i][j] + "  ");
+                }
+                System.out.print("|"); 
+            }System.out.println("\n");
+        }  
+    }
+    
     public static void transposeMatriks() {
         System.out.println("\n--- Matriks sebelum ditranspose ---");
         for (int i = 0; i < barisA; i++) {
-            
             System.out.print( "\n"+ "| ");
             for (int j = 0; j < kolomA; j++) {
                 System.out.print(matriksA[i][j] + " ");
