@@ -231,15 +231,15 @@ public class OperasiMatrik {
                     System.out.println("Determinan = " + det);
                     System.out.println("Matriks tidak memiliki invers.");
                 }else {
-                    invers3x3[0][0] = (matriks3x3[1][1]*matriks3x3[2][2]-matriks3x3[1][2]*matriks3x3[2][1])*1/det;
-                    invers3x3[0][1] = -(matriks3x3[1][0]*matriks3x3[2][2]-matriks3x3[1][2]*matriks3x3[2][0])*1/det;
-                    invers3x3[0][2] = (matriks3x3[1][0]*matriks3x3[2][1]-matriks3x3[1][1]*matriks3x3[2][0])*1/det;
-                    invers3x3[1][0] = -(matriks3x3[0][1]*matriks3x3[2][2]-matriks3x3[0][2]*matriks3x3[2][1])*1/det;
-                    invers3x3[1][1] = (matriks3x3[0][0]*matriks3x3[2][2]-matriks3x3[0][2]*matriks3x3[2][0])*1/det;
-                    invers3x3[1][2] = -(matriks3x3[0][0]*matriks3x3[2][1]-matriks3x3[0][1]*matriks3x3[2][0])*1/det;
-                    invers3x3[2][0] = (matriks3x3[0][1]*matriks3x3[1][2]-matriks3x3[0][2]*matriks3x3[1][1])*1/det;
-                    invers3x3[2][1] = -(matriks3x3[0][0]*matriks3x3[1][2]-matriks3x3[0][2]*matriks3x3[1][0])*1/det;
-                    invers3x3[2][2] = (matriks3x3[0][0]*matriks3x3[1][1]-matriks3x3[0][1]*matriks3x3[1][0])*1/det;
+                    invers3x3[0][0] = (matriks3x3[1][1]*matriks3x3[2][2]-matriks3x3[1][2]*matriks3x3[2][1])/det;
+                    invers3x3[0][1] = -(matriks3x3[1][0]*matriks3x3[2][2]-matriks3x3[1][2]*matriks3x3[2][0])/det;
+                    invers3x3[0][2] = (matriks3x3[1][0]*matriks3x3[2][1]-matriks3x3[1][1]*matriks3x3[2][0])/det;
+                    invers3x3[1][0] = -(matriks3x3[0][1]*matriks3x3[2][2]-matriks3x3[0][2]*matriks3x3[2][1])/det;
+                    invers3x3[1][1] = (matriks3x3[0][0]*matriks3x3[2][2]-matriks3x3[0][2]*matriks3x3[2][0])/det;
+                    invers3x3[1][2] = -(matriks3x3[0][0]*matriks3x3[2][1]-matriks3x3[0][1]*matriks3x3[2][0])/det;
+                    invers3x3[2][0] = (matriks3x3[0][1]*matriks3x3[1][2]-matriks3x3[0][2]*matriks3x3[1][1])/det;
+                    invers3x3[2][1] = -(matriks3x3[0][0]*matriks3x3[1][2]-matriks3x3[0][2]*matriks3x3[1][0])/det;
+                    invers3x3[2][2] = (matriks3x3[0][0]*matriks3x3[1][1]-matriks3x3[0][1]*matriks3x3[1][0])/det;
                     System.out.println("Determinan = " + det);
                 }
         } else {
@@ -263,7 +263,8 @@ public class OperasiMatrik {
                 for (int j = 0; j < invers3x3[i].length; j++) {
                     System.out.print(invers3x3[i][j] + "  ");
                 }
-                System.out.print("|"); 
+                System.out.print("|");
+                System.out.println(); 
             }System.out.println("\n");
         }  
     }    
